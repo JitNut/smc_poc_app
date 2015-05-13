@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class com.ionicframework.smartcontroller399859.CordovaApp { <init>(...); }
+

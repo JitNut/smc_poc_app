@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+           
+  <body ng-app="smartHome" ng-controller="roomsDataCtrl">
+      <div class="bar bar-header bar-positive">
+          <div ng-if="ActiveView === Views.HomeView">
+              <button class="button icon ion-home" ng-click="setView(Views.HomeView)"></button>
+              <label class="title">SmartController</label>
+              <button class="button icon ion-settings"/>
+          </div>
+           <div ng-if="ActiveView === Views.RoomView">
+               <button class="button icon ion-home" ng-click="setView(Views.HomeView)"></button>
+               <label class="title">{{selectedRoomTitle}}</label>
+               <button class="button icon ion-navicon"/>
+          </div>
+      </div>
+      <ion-content class="has-header">
+          <form name="MainViews" ng-if="ActiveView === Views.HomeView">
+      <div class="list">
+        <a ng-repeat="item in rooms" 
+           ng-click="setRoom('{{item.id}}')"
+           class="item item-avatar">
+          <img ng-src="{{ item.img }}">
+          <h2>{{ item.Heading }}</h2>
+          <p>{{ item.Description }}</p>
+        </a>
+
+      </div>
+</form>
+        <form name="RoomsView" ng-if="ActiveView === Views.RoomView">
+               <ul class="list">
+                   <li class="item item-toggle" ng-repeat="item in selectedRoom.Equips">
+                       <i class="icon {{item.icon}}"></i>
+                       {{item.Name}}
+                       <label class="toggle toggle-assertive">
+                           <input type="checkbox">
+                           <div class="track sc-tracker">
+                               <div class="handle"></div>
+                           </div>
+                       </label>
+                   </li>
+            </ul>
+        </form>
+    </ion-content>
+  </body>
+</html>
