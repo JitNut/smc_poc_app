@@ -1,0 +1,9 @@
+<div class="list">
+        <a ng-repeat="item in rooms" 
+           ng-click="setRoom('{{item.id}}')"
+           class="item item-avatar">
+          <img ng-src="{{ item.img }}">
+          <h2>{{ item.Heading }}</h2>
+          <p>{{ item.Description }}</p>
+        </a>
+      </div>
