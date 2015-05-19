@@ -8,15 +8,16 @@
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
+    <script src="cordova.js"></script>  
+      
+      <script src="js/directives/line-chart.min.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
+       
   </head>
            
   <body ng-app="smartHome" ng-controller="roomsDataCtrl" class="platform-android platform-cordova platform-webview">
@@ -31,10 +32,26 @@
                <label class="title">{{selectedRoomTitle}}</label>
                <button class="button icon ion-navicon"/>
           </div>
+          <div ng-if="ActiveView === Views.ChartView">
+              <button class="button icon ion-home" ng-click="setView(Views.HomeView)"></button>
+              <label class="title">{{selectedChartTitle}}</label>
+              <button class="button icon ion-settings"/>
+          </div>
       </div>
       <ion-content class="has-header">
-          <form name="MainViews" ng-if="ActiveView === Views.HomeView">
-      <div class="list">
+          <form name="MainViews" ng-if="ActiveView === Views.HomeView" home-view>
+              <div class="list">
+                  
+<!--                  chart list here-->
+              <a ng-repeat="item in chartItems" 
+           ng-click="setChart('{{item.type}}')"
+           class="item item-avatar">
+          <img ng-src="{{ item.img }}">
+          <h2>{{ item.Heading }}</h2>
+          <p>{{ item.Description }}</p>
+        </a>
+<!--                  chart list ens here-->
+                  
         <a ng-repeat="item in rooms" 
            ng-click="setRoom('{{item.id}}')"
            class="item item-avatar">
@@ -42,11 +59,10 @@
           <h2>{{ item.Heading }}</h2>
           <p>{{ item.Description }}</p>
         </a>
-
       </div>
-</form>
-        <form name="RoomsView" ng-if="ActiveView === Views.RoomView">
-               <ul class="list">
+          </form>
+        <form name="RoomsView" ng-if="ActiveView === Views.RoomView" room-view>
+            <ul class="list">
                    <li class="item item-toggle" ng-repeat="item in selectedRoom.Equips">
                        <i class="icon {{item.icon}}"></i>
                        {{item.Name}}
@@ -58,7 +74,37 @@
                        </label>
                    </li>
             </ul>
-        </form>
+                 
+        </form> 
+          <form name="ChartView" ng-if="ActiveView === Views.ChartView" chart-view style="margin: 30px;">
+              <div ng-if="isLineChart">
+                  <script src="../lib/chart/chart.js" charset="utf-8"></script>
+                  <script src="lib/chart/d3.min.js"></script>
+                  <linechart data="graphData"
+                             options="graphOptions"
+                             mode=""></linechart>
+              </div>
+              <div ng-if="!isLineChart" style="margin: 30px;">
+                  <script src="lib/chart/d3.js"></script>
+                  <script src="lib/chart/nv.d3.js"></script>
+                  <script src="js/directives/pie-chart.js"></script>
+                  <link rel="stylesheet" href="css/nv.d3.css" />
+                  <nvd3-pie-chart
+                              id="exampleId"
+                              data="graphData"
+                              
+                              x="xFunction()"
+                              y="yFunction()"
+                              width="{{expliciteWidth}}"
+                              height="{{expliciteHeight}}"
+                              showLabels="true"
+                              pieLabelsOutside="true"
+                              showValues="true"
+                              labelType="percent"
+                              showLegend="true">
+              </nvd3-pie-chart>
+                  </div>
+          </form>
     </ion-content>
   </body>
 </html>

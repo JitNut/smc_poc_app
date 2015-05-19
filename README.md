@@ -6,7 +6,7 @@ PLEASE FOLLOW THESE COMMANDS TO SETUP REPO
   2.NAVIGATE TO THE WORK DIRECTORY && run the fllowing commands
     
     git init
-    git remote add origin ""
+    git remote add origin <clone url>
     git pull origin master
     
   3.CRAETE new BRANCH by following commands
