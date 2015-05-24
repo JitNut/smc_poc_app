@@ -77,32 +77,13 @@
                  
         </form> 
           <form name="ChartView" ng-if="ActiveView === Views.ChartView" chart-view style="margin: 30px;">
+               <script src="lib/chart/ichart.1.2.min.js" charset="utf-8"></script>
               <div ng-if="isLineChart">
-                  <script src="../lib/chart/chart.js" charset="utf-8"></script>
-                  <script src="lib/chart/d3.min.js"></script>
-                  <linechart data="graphData"
-                             options="graphOptions"
-                             mode=""></linechart>
+                  <div id='canvasLineChart' ng-init="drawLineChart('canvasLineChart')"></div>
               </div>
               <div ng-if="!isLineChart" style="margin: 30px;">
-                  <script src="lib/chart/d3.js"></script>
-                  <script src="lib/chart/nv.d3.js"></script>
-                  <script src="js/directives/pie-chart.js"></script>
-                  <link rel="stylesheet" href="css/nv.d3.css" />
-                  <nvd3-pie-chart
-                              id="exampleId"
-                              data="graphData"
-                              
-                              x="xFunction()"
-                              y="yFunction()"
-                              width="{{expliciteWidth}}"
-                              height="{{expliciteHeight}}"
-                              showLabels="true"
-                              pieLabelsOutside="true"
-                              showValues="true"
-                              labelType="percent"
-                              showLegend="true">
-              </nvd3-pie-chart>
+                  <div id='canvasPieChart' ng-init="drawPieChart('canvasPieChart')">
+                  </div>
                   </div>
           </form>
     </ion-content>

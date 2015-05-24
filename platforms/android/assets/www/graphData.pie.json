@@ -1,11 +1,37 @@
 [
-{ "key": "Kitchen", "y": 3840 },
-{ "key": "Living", "y": 3400 },
-{ "key": "Dining", "y": 250 },
-{ "key": "Family", "y": 2200},
-{ "key": "Master", "y": 1395 },
-{ "key": "Rams", "y": 2390 },
-{ "key": "Prems", "y": 2390 },
-{ "key": "AC", "y": 15750 },
-{ "key": "G/O Lights", "y": 15750 }
- ]
+  {
+    "name": "Kitchen",
+    "value": "3840",
+    "color": "#892096"
+  },
+  {
+    "name": "Living",
+    "value": "3400",
+    "color": "#0CB38F"
+  },
+  {
+    "name": "Dining",
+    "value": "250",
+    "color": "#3E4F9C"
+  },
+  {
+    "name": "Family",
+    "value": "220",
+    "color": "#D9D93D"
+  },
+  {
+    "name": "Rams",
+    "value": "2390",
+    "color": "#FF8B59"
+  },
+  {
+    "name": "AC",
+    "value": "15750",
+    "color": "#F5B52C"
+  },
+  {
+    "name": "G/O Lights",
+    "value": "15750",
+    "color": "#34B52F"
+  }
+]
