@@ -1,0 +1,14 @@
+[
+    {"Heading" : "Living Room", "img":"img/living_room.png", "id":"sm001"},
+    {"Heading" : "Bath Room", "img":"img/bath_room.png", "id":"sm002"},
+    {"Heading" : "Dinning Room", "img":"img/dining_room.png", "id":"sm003"},
+    {"Heading" : "Bed Room", "img":"img/sleeping_room.png", "id":"sm004"},
+    {"Heading" : "Living Room", "img":"img/living_room.png", "id":"sm001"},
+    {"Heading" : "Bath Room", "img":"img/bath_room.png", "id":"sm002"},
+    {"Heading" : "Dinning Room", "img":"img/dining_room.png", "id":"sm003"},
+    {"Heading" : "Bed Room", "img":"img/sleeping_room.png", "id":"sm004"},
+    {"Heading" : "Living Room", "img":"img/living_room.png", "id":"sm001"},
+    {"Heading" : "Bath Room", "img":"img/bath_room.png", "id":"sm002"},
+    {"Heading" : "Dinning Room", "img":"img/dining_room.png", "id":"sm003"},
+    {"Heading" : "Bed Room", "img":"img/sleeping_room.png", "id":"sm004"}
+]

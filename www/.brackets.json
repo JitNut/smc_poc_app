@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/home/jithil/git_dev/SmartController/www/lib/ionic/js/ionic.bundle.min.js",
+        "/home/jithil/git_dev/SmartController/www/lib/ionic/js/ionic-angular.min.js",
+        "/home/jithil/git_dev/SmartController/www/lib/ionic/js/ionic.js",
+        "/home/jithil/git_dev/SmartController/www/js/directives/line-chart.min.js"
+    ]
+}

@@ -1,4 +1,5 @@
 /home/jithil/git_dev/SmartController/platforms/android/ant-build/classes.dex : \
+/home/jithil/git_dev/SmartController/platforms/android/ant-build/classes/net/yoik/cordova/plugins/screenorientation/YoikScreenOrientation.class \
 /home/jithil/git_dev/SmartController/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
 /home/jithil/git_dev/SmartController/platforms/android/ant-build/classes/com/ionicframework/smartcontroller399859/R$drawable.class \
 /home/jithil/git_dev/SmartController/platforms/android/ant-build/classes/com/ionicframework/smartcontroller399859/R$attr.class \
