@@ -14,7 +14,6 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>  
       
-      <script src="js/directives/line-chart.min.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
        
@@ -81,7 +80,7 @@
               <div ng-if="isLineChart">
                   <div id='canvasLineChart' ng-init="drawLineChart('canvasLineChart')"></div>
               </div>
-              <div ng-if="!isLineChart" style="margin: 30px;">
+              <div ng-if="!isLineChart">
                   <div id='canvasPieChart' ng-init="drawPieChart('canvasPieChart')">
                   </div>
                   </div>

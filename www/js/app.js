@@ -3,16 +3,15 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('smartHome', ['ionic','n3-line-chart'])
+angular.module('smartHome', ['ionic'])
 .controller('roomsDataCtrl',function($scope,$http,$window){
     
-    screen.orientation.onchange = function() {
-        alert('rotated');
-    };
+   
     var graphData = {
         'Line' : [],
         'Pie' :  []
     };
+    
     var graphOptions = {
         'Line' : [],
         'Pie' :  []
@@ -122,26 +121,22 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
     }; 
    
     $scope.setChart = function(type){
+        screen.lockOrientation('landscape');
         switch(type)
         {
                 case chartTypes.Line:
                 $scope.graphData = graphData.Line;
                 $scope.isLineChart = true;
-                //$scope.graphOptions = graphOptions.Line;
+                
                 break;
                 case chartTypes.Pie:
                 $scope.graphData = graphData.Pie;
                 $scope.isLineChart = false;
-                drawPieChart();
                 break;
         }
         setView($scope.Views.ChartView);
     }
     
-    function drawPieChart()
-    {
-       
-    }
    function getDescriptionFromId(id){
        for(i=0;i<$scope.rooms.length;i++){
             if($scope.rooms[i].id == id)
@@ -158,6 +153,7 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
     
     function setView(view)
     {
+        screen.unlockOrientation();
         switch(view){
                 case $scope.Views.RoomView:
                 $scope.ActiveView = $scope.Views.RoomView;
@@ -178,12 +174,12 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
     initGraphData();
     
     $scope.setView = setView;
-    
+
     $scope.drawPieChart = function (div){
-        new iChart.Pie2D({
+       var chartCanvas=  new iChart.Pie3D({
 					render : div,
 					data: $scope.graphData,
-
+           width: $scope.expliciteWidth - 20,
 					legend : {
 						enable : false,
 						align : 'center',
@@ -200,7 +196,8 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
 					layout_distance : 1,
 					border : true,
 					tip  : 'enable'
-				}).draw();
+				});
+         chartCanvas.draw();
     };
     
     $scope.drawLineChart = function(div){
@@ -226,7 +223,7 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
 				         	}
 				         ];
 
-				var chart = new iChart.LineBasic2D({
+       var chartCanvas = new iChart.Area2D({
 					render : div,
 					data:data,
                     width: $scope.expliciteWidth - 20,
@@ -293,7 +290,8 @@ angular.module('smartHome', ['ionic','n3-line-chart'])
 						}]
 					}
 				});
-			chart.draw();
+			chartCanvas.draw();
+        chartCanvas.resize($scope.expliciteWidth - 20,$scope.expliciteHeight-60);
     }
 })
 .run(function($ionicPlatform) {

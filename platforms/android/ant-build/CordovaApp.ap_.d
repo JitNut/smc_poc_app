@@ -78,15 +78,10 @@
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/css/style.css \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/css/ionic.app.min.css \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/css/ionic.app.css \
-/home/jithil/git_dev/SmartController/platforms/android/assets/www/js/directives \
-/home/jithil/git_dev/SmartController/platforms/android/assets/www/js/utils.js \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/js/app.js \
-/home/jithil/git_dev/SmartController/platforms/android/assets/www/js/directives/line-chart.min.js \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/chart \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/ionic \
-/home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/chart/d3.min.js \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/chart/ichart.1.2.min.js \
-/home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/chart/line-chart.js \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/ionic/version.json \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/ionic/fonts \
 /home/jithil/git_dev/SmartController/platforms/android/assets/www/lib/ionic/css \
